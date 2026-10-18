@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4eb">
+  <title>Discover Marinduque | The Heart of the Philippines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Marinduque home">M<span>.</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="primary-navigation" aria-label="Main navigation">
+      <a href="#destinations">Destinations</a>
+      <a href="#culture">Local culture</a>
+      <a href="#trip-list">My trip list</a>
+    </nav>
+    <a class="header-note" href="#destinations">Explore the island <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <img class="hero-image" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2200&q=85" alt="Turquoise sea and a tropical shoreline">
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">MIMAROPA · PHILIPPINES</p>
+        <h1 id="hero-title">Discover<br><em>Marinduque.</em></h1>
+        <p class="hero-description">An island of quiet coves, storied towns, and traditions that bring a whole community together.</p>
+        <a class="hero-link" href="#destinations">See the island <span aria-hidden="true">↓</span></a>
+      </div>
+      <p class="hero-caption">A little island with a lot to discover.</p>
+      <span class="hero-index" aria-hidden="true">13° 24′ N &nbsp; 121° 58′ E</span>
+    </section>
+
+    <section class="destinations section-wrap" id="destinations" aria-labelledby="destinations-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow eyebrow-dark">A FEW PLACES TO BEGIN</p>
+          <h2 id="destinations-title">Take the scenic route.</h2>
+        </div>
+        <p class="section-intro">From the old streets of Boac to the water beyond the coast, there’s no need to hurry.</p>
+      </div>
+
+      <label class="search-control" for="destination-search">
+        <span>Search destinations</span>
+        <input id="destination-search" type="search" placeholder="Try a place or town name" autocomplete="off">
+      </label>
+
+      <div class="filters" role="group" aria-label="Filter destinations by category">
+        <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All places <span>03</span></button>
+        <button class="filter-button" type="button" data-filter="nature" aria-pressed="false">Nature</button>
+        <button class="filter-button" type="button" data-filter="culture" aria-pressed="false">Culture</button>
+      </div>
+
+      <p class="results-message" id="results-message" aria-live="polite"></p>
+      <div class="destination-grid" id="destination-grid">
+        <article class="destination-card" data-category="nature" data-destination-id="poctoy-white-beach">
+          <div class="card-image-wrap"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Illustrative white-sand beach and clear blue water" loading="lazy"><span class="card-number">01</span></div>
+          <div class="card-copy"><h3>Poctoy White Beach</h3><dl class="destination-details"><div><dt>Location</dt><dd>Torrijos</dd></div><div><dt>Category</dt><dd>Beach</dd></div><div><dt>Description</dt><dd>A coastal destination for a relaxing beach visit.</dd></div></dl><button class="trip-add" type="button">Add to trip list</button></div>
+        </article>
+        <article class="destination-card" data-category="nature" data-destination-id="tres-reyes-islands">
+          <div class="card-image-wrap"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=80" alt="Illustrative green island surrounded by the sea" loading="lazy"><span class="card-number">02</span></div>
+          <div class="card-copy"><h3>Tres Reyes Islands</h3><dl class="destination-details"><div><dt>Location</dt><dd>Gasan</dd></div><div><dt>Category</dt><dd>Island</dd></div><div><dt>Description</dt><dd>A group of islands off the coast of Gasan.</dd></div></dl><button class="trip-add" type="button">Add to trip list</button></div>
+        </article>
+        <article class="destination-card" data-category="culture" data-destination-id="boac-cathedral">
+          <div class="card-image-wrap"><img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=900&q=80" alt="Illustrative view of a historic island town" loading="lazy"><span class="card-number">03</span></div>
+          <div class="card-copy"><h3>Boac Cathedral</h3><dl class="destination-details"><div><dt>Location</dt><dd>Boac</dd></div><div><dt>Category</dt><dd>Heritage</dd></div><div><dt>Description</dt><dd>A historic cathedral in the provincial capital.</dd></div></dl><button class="trip-add" type="button">Add to trip list</button></div>
+        </article>
+      </div>
+      <p class="photo-note">Destination photos are illustrative. Check local conditions and access before visiting.</p>
+
+      <section class="trip-list" id="trip-list" aria-labelledby="trip-list-title">
+        <div class="trip-list-heading"><div><p class="eyebrow eyebrow-dark">YOUR SAVED PLACES</p><h2 id="trip-list-title">My trip list <span id="trip-count">0</span></h2></div><p>Saved in this browser for this demonstration.</p></div>
+        <ul id="trip-items" aria-live="polite"></ul>
+        <p class="trip-empty" id="trip-empty">Your list is empty. Add a destination to start planning.</p>
+      </section>
+    </section>
+
+    <section class="about" id="culture" aria-labelledby="about-title">
+      <div class="about-inner">
+        <p class="eyebrow">LOCAL CULTURE · MARINDUQUE</p>
+        <h2 id="about-title">A tradition<br><em>you can feel.</em></h2>
+        <p>During Holy Week, the Moriones Festival brings masked performers into the streets in a re-enactment inspired by the story of Longinus. The masks, costumes, and processions are a distinctive part of Marinduque’s cultural life.</p>
+        <a class="about-link" href="#home">Back to the beginning <span aria-hidden="true">↑</span></a>
+      </div>
+      <div class="about-stamp" aria-hidden="true">M<br><span>PH</span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand brand-footer" href="#home" aria-label="Discover Marinduque home">M<span>.</span></a><p>MARINDUQUE, PHILIPPINES</p><p>Student demonstration. Sample information only; no live updates or official advisories.</p></footer>
+</body>
+</html>
